@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.imumotion.amoquette">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:label="@string/app_name"
+        android:icon="@drawable/ic_logo"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.AMoquette"
+        android:allowBackup="true"
+        android:fullBackupOnly="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <service
+            android:name="com.imumotion.amoquette.broker.BrokerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":mqttbroker_process"
+            android:icon="@drawable/ic_mqtt_smallicon"/>
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+    </application>
+</manifest>

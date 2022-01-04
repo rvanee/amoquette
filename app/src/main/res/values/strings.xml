@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">AMoquette</string>
+    <!-- Settings Activity Title -->
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="start_broker">Start broker</string>
+    <string name="settings">Settings</string>
+    <string name="moquette_broker">Moquette Broker</string>
+    <string name="start_or_stop_broker">Start or stop broker</string>
+    <string name="connection_string">Connection string</string>
+    <string name="n_a">N/A</string>
+    <string name="broker_uptime_s">broker uptime [s]</string>
+    <string name="broker_unix_time_ms">broker UNIX time [ms]</string>
+    <string name="connected_clients"># connected clients</string>
+    <string name="sys_messages">$SYS messages</string>
+    <string name="roundtrip_delay_ms">Roundtrip delay [ms]</string>
+    <string name="min">min</string>
+    <string name="max">max</string>
+    <string name="mean">mean</string>
+    <string name="stddev">stddev</string>
+    <string name="n">n</string>
+</resources>

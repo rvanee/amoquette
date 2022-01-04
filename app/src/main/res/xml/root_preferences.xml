@@ -1,0 +1,53 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditTextPreference
+        app:key="host"
+        app:title="Host"
+        app:summary="Default value 0.0.0.0 = localhost"
+        app:defaultValue="0.0.0.0" />
+
+    <EditTextPreference
+        app:key="port"
+        app:title="Port number"
+        app:summary="Default 1883"
+        app:defaultValue="1883" />
+
+    <EditTextPreference
+        app:key="wakelockduration"
+        app:title="Wake lock duration"
+        app:summary="Hours to keep device awake when service running. Default 2; 0 = no wake lock"
+        app:defaultValue="2" />
+
+    <EditTextPreference
+        app:key="heartbeatinterval"
+        app:title="Heartbeat interval [ms]"
+        app:summary="Time between heartbeat messages, used for latency measurement. Default 5000 [ms]; 0 = no heartbeats"
+        app:defaultValue="5000" />
+
+    <EditTextPreference
+        app:key="sysmsginterval"
+        app:title="$SYS message interval"
+        app:summary="Time [s] between sending $SYS messages. Default 60; 0 = no $SYS messages"
+        app:defaultValue="60" />
+
+    <SwitchPreferenceCompat
+        app:key="immediate_buffer_flush"
+        app:title="Immediate buffer flush"
+        app:summary="Immediate flushing reduces latency"
+        app:summaryOff="Optimize performance"
+        app:summaryOn="Optimize latency"
+        app:defaultValue="true" />
+
+    <EditTextPreference
+        app:key="netty.mqtt.message_size"
+        app:title="MQTT message size"
+        app:summary="Message size in bytes. Default 8192"
+        app:defaultValue="8192" />
+
+    <SwitchPreferenceCompat
+        app:key="allow_anonymous"
+        app:title="Allow anonymous"
+        app:defaultValue="true"
+        app:isPreferenceVisible="false" />
+
+</PreferenceScreen>
