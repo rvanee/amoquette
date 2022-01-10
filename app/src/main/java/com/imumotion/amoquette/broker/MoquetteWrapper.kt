@@ -40,11 +40,11 @@ class MoquetteWrapper() {
     init {
         // Setup log4j system by appending a Logcat Appender, if it has
         // not been appended before
-        if(LogManager.getRootLogger().getAppender(LOGCAT_APPENDER) == null) {
-            LogManager.getRootLogger().addAppender(LogcatAppender(LOGCAT_APPENDER))
+        val rootlogger = LogManager.getRootLogger()
+        if(rootlogger.getAppender(LOGCAT_APPENDER) == null) {
+            rootlogger.addAppender(LogcatAppender(LOGCAT_APPENDER))
         }
         logger = LogManager.getLogger("MoquetteBroker")
-        //LogManager.getRootLogger().setLevel(Level.OFF)
 
         // Create broker object
         mqttBroker = Server()
