@@ -14,7 +14,9 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AMoquette"
         android:allowBackup="true"
-        android:fullBackupOnly="true">
+        android:fullBackupOnly="true"
+        android:versionCode="1"
+        android:versionName="0.1">
         <activity
             android:name=".MainActivity"
             android:exported="true"

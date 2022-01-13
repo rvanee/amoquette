@@ -20,29 +20,30 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+-verbose
+-repackageclasses ''
+-allowaccessmodification
+-optimizations !code/simplification/arithmetic
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+
+# Android
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+
+# netty
 -keepclassmembernames class io.netty.** { *; }
 -keepclassmembers class org.jctools.** { *; }
 
-#-assumenosideeffects class android.util.Log {
-#    public static boolean isLoggable(java.lang.String, int);
-#    public static int v(...);
-#    public static int d(...);
-#    public static int i(...);
-#}
+# remove logging
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
 
--dontwarn com.android.org.conscrypt.SSLParametersImpl
--dontwarn org.apache.harmony.xnet.provider.jsse.SSLParametersImpl
--dontwarn org.apache.logging.log4j.LogManager
--dontwarn org.apache.logging.log4j.Logger
--dontwarn org.apache.logging.log4j.message.MessageFactory
--dontwarn org.apache.logging.log4j.spi.ExtendedLogger
--dontwarn org.apache.logging.log4j.spi.ExtendedLoggerWrapper
--dontwarn java.beans.BeanInfo
--dontwarn java.beans.ConstructorProperties
--dontwarn java.beans.IntrospectionException
--dontwarn java.beans.Introspector
--dontwarn java.beans.PropertyDescriptor
--dontwarn java.beans.Transient
--dontwarn java.lang.management.ManagementFactory
--dontwarn java.lang.management.OperatingSystemMXBean
+-dontwarn java.beans.**
 -dontwarn reactor.blockhound.integration.BlockHoundIntegration

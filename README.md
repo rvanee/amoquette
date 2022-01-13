@@ -3,7 +3,8 @@ A foreground service for Android, wrapping the Moquette MQTT broker and displayi
 
 ## Getting Started
 
-Just build it using Android Studio.
+A debug app can be built using Android Studio right after cloning or downloading the source from Github.
+Building a release app requires you to set up a keystore file at ./app/amoquette.jks, and modify the keyPassword and storePassword values in the ./keystore.properties file. After that, you should be able to build it.
 
 ### Prerequisites
 
@@ -12,7 +13,7 @@ Just build it using Android Studio.
 
 ### Installation
 
-* Open the project and build it (Build variants are debug and release).
+* Open the project and build it (Build variants are debug and release). For a release build, see the remarks under Getting Started.
 * Run the app on the emulator or on real hardware
 
 ## Usage
@@ -22,7 +23,7 @@ Just build it using Android Studio.
 
 ## Deployment
 
-The Settings activity contains a wake lock duration property. Note that this duration affects battery life.
+Under Settings a wake lock duration property may be altered, which specifies the amount of time that the broker service will keep the device awake. Note that this duration affects battery life.
 
 ### Branches
 
@@ -30,4 +31,4 @@ The Settings activity contains a wake lock duration property. Note that this dur
 
 ## Additional Documentation and Acknowledgments
 
-* This project uses Moquette (https://github.com/moquette-io/moquette)
+* This project uses Moquette (https://github.com/moquette-io/moquette), hence its name (Android Moquette, or 'A' Moquette).

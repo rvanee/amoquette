@@ -42,7 +42,9 @@ class MoquetteWrapper() {
         // not been appended before
         val rootlogger = LogManager.getRootLogger()
         if(rootlogger.getAppender(LOGCAT_APPENDER) == null) {
-            rootlogger.addAppender(LogcatAppender(LOGCAT_APPENDER))
+            // Uncomment the line below to enable logcat logging from moquette/netty
+            // (for debugging purposes)
+            //rootlogger.addAppender(LogcatAppender(LOGCAT_APPENDER))
         }
         logger = LogManager.getLogger("MoquetteBroker")
 
